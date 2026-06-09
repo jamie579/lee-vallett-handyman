@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Lee Vallett — Handyman &amp; Gardening in Sheffield</title>
-<meta name="description" content="Reliable handyman and gardening services in Sheffield and the surrounding areas. From flat-pack assembly and home repairs to lawn care, hedge trimming and garden clearances.">
+<meta name="description" content="Reliable, all-round handyman and gardening services in Sheffield and the surrounding areas. From flat-pack assembly, repairs and decorating to lawn care, hedge trimming and garden clearances. No job too big or too small.">
 <meta name="theme-color" content="#2D4A3A">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -59,14 +59,20 @@
   .actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.8rem;}
   .btn{
     display:inline-block;padding:.85rem 1.6rem;border-radius:2px;
-    font-weight:600;font-size:1rem;text-decoration:none;
+    font-weight:600;font-size:1rem;text-decoration:none;cursor:pointer;
     transition:transform .15s ease, background .15s ease, color .15s ease;
   }
-  .btn-primary{background:var(--pine);color:#F6F4EE;}
+  .btn-primary{background:var(--pine);color:#F6F4EE;border:none;}
   .btn-primary:hover{background:var(--pine-deep);transform:translateY(-2px);}
   .btn-ghost{border:1.5px solid var(--ink);color:var(--ink);}
   .btn-ghost:hover{background:var(--ink);color:var(--paper);transform:translateY(-2px);}
   .btn:focus-visible{outline:3px solid var(--ochre);outline-offset:3px;}
+
+  /* Intro */
+  .intro{max-width:62rem;margin:0 auto clamp(1.5rem,4vw,2.5rem);padding:0 1.5rem;}
+  .intro-text{
+    font-size:clamp(1.05rem,2.6vw,1.25rem);color:var(--ink);max-width:48rem;
+  }
 
   /* Services — the two-trade split */
   .services{
@@ -121,6 +127,35 @@
   .contact-row a:hover{color:var(--ochre);}
   .contact-row a:focus-visible{outline:3px solid var(--ochre);outline-offset:2px;}
 
+  /* Enquiry form */
+  .enquiry{max-width:62rem;margin:clamp(2.5rem,6vw,4rem) auto 0;padding:0 1.5rem;}
+  .enquiry-head{
+    font-family:var(--font-display);font-weight:700;
+    font-size:clamp(1.4rem,5vw,1.9rem);color:var(--pine-deep);
+  }
+  .enquiry-sub{color:var(--muted);margin-top:.5rem;margin-bottom:1.5rem;font-size:1.05rem;}
+  .form-grid{display:grid;grid-template-columns:1fr;gap:1.1rem;}
+  .field{display:flex;flex-direction:column;gap:.4rem;}
+  .field label{
+    font-size:.78rem;text-transform:uppercase;letter-spacing:.12em;
+    font-weight:600;color:var(--muted);
+  }
+  .field input,.field textarea{
+    font-family:var(--font-body);font-size:1rem;color:var(--ink);
+    background:#FBF9F4;border:1.5px solid var(--line);border-radius:2px;
+    padding:.7rem .8rem;width:100%;
+  }
+  .field textarea{min-height:7rem;resize:vertical;}
+  .field input:focus,.field textarea:focus{
+    outline:none;border-color:var(--pine);box-shadow:0 0 0 3px rgba(45,74,58,.14);
+  }
+  .form-actions{margin-top:.2rem;}
+  .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;}
+  @media (min-width:560px){
+    .form-grid{grid-template-columns:1fr 1fr;}
+    .field-full{grid-column:1 / -1;}
+  }
+
   /* Footer */
   .footer{
     max-width:62rem;margin:clamp(2.5rem,6vw,4rem) auto 0;padding:1.5rem;
@@ -145,24 +180,34 @@
       <p class="eyebrow">Sheffield &amp; surrounding areas</p>
       <h1 class="name">Lee Vallett</h1>
       <p class="trade">Handyman &amp; Gardening</p>
-      <p class="tagline">Reliable help around the home and garden. No job too small.</p>
+      <p class="tagline">Reliable help around the home and garden. No job too big or too small.</p>
       <div class="actions">
-        <a class="btn btn-primary" href="tel:07XXXXXXXXX">Call Lee</a>
-        <a class="btn btn-ghost" href="mailto:leevalletthandyman@gmail.com">Email</a>
+        <a class="btn btn-primary" href="tel:+447946408165">Call Lee</a>
+        <a class="btn btn-ghost" href="#enquiry">Send an enquiry</a>
       </div>
     </div>
   </header>
 
   <main>
+    <section class="intro" aria-label="About Lee">
+      <p class="intro-text">A skilled, all-round handyman covering Sheffield and the surrounding areas. From putting up a single shelf to a full garden makeover, Lee turns his hand to most jobs around the home and garden — big or small, indoors and out. If it needs fixing, fitting, building or tidying, just ask.</p>
+    </section>
+
     <section class="services" aria-label="Services">
       <article class="panel panel-fix">
-        <p class="panel-label">Inside the home</p>
+        <p class="panel-label">Around the home</p>
         <h2 class="panel-title">Handyman</h2>
         <ul class="job-list">
-          <li>Flat-pack assembly</li>
-          <li>Shelves &amp; TV mounting</li>
+          <li>Flat-pack &amp; furniture assembly</li>
+          <li>Shelves, mirrors &amp; TV mounting</li>
           <li>Painting &amp; decorating</li>
-          <li>Fence &amp; gate repairs</li>
+          <li>Tiling, grouting &amp; sealant</li>
+          <li>Plastering, filling &amp; patching</li>
+          <li>Doors, locks, handles &amp; hinges</li>
+          <li>Flooring &amp; laminate</li>
+          <li>Dripping taps &amp; minor plumbing</li>
+          <li>Guttering, drainpipes &amp; fascias</li>
+          <li>Fence, gate &amp; shed repairs</li>
           <li>General repairs &amp; odd jobs</li>
         </ul>
       </article>
@@ -172,9 +217,14 @@
         <ul class="job-list">
           <li>Lawn mowing &amp; edging</li>
           <li>Hedge &amp; shrub trimming</li>
-          <li>Weeding &amp; planting</li>
-          <li>Borders &amp; tidy-ups</li>
-          <li>Garden clearances</li>
+          <li>Weeding, planting &amp; borders</li>
+          <li>Pruning &amp; cutting back</li>
+          <li>Turfing &amp; new lawns</li>
+          <li>Fencing, gates &amp; decking</li>
+          <li>Pressure washing patios &amp; paths</li>
+          <li>Garden &amp; site clearances</li>
+          <li>Green waste removal</li>
+          <li>Seasonal tidy-ups</li>
         </ul>
       </article>
     </section>
@@ -185,7 +235,7 @@
       <dl class="contact-details">
         <div class="contact-row">
           <dt>Phone</dt>
-          <dd><a href="tel:07XXXXXXXXX">07XXX XXX XXX</a></dd>
+          <dd><a href="tel:+447946408165">07946 408165</a></dd>
         </div>
         <div class="contact-row">
           <dt>Email</dt>
@@ -196,6 +246,39 @@
           <dd>Sheffield &amp; surrounding areas</dd>
         </div>
       </dl>
+    </section>
+
+    <section class="enquiry" id="enquiry" aria-label="Send an enquiry">
+      <h2 class="enquiry-head">Send an enquiry</h2>
+      <p class="enquiry-sub">Tell Lee what you need doing and he'll get back to you, usually the same day.</p>
+      <form action="https://formsubmit.co/leevalletthandyman@gmail.com" method="POST" class="form-grid">
+        <!-- FormSubmit settings -->
+        <input type="hidden" name="_subject" value="New website enquiry">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <!-- Spam honeypot: leave empty -->
+        <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+        <div class="field">
+          <label for="name">Your name</label>
+          <input id="name" name="name" type="text" required autocomplete="name">
+        </div>
+        <div class="field">
+          <label for="phone">Phone</label>
+          <input id="phone" name="phone" type="tel" autocomplete="tel">
+        </div>
+        <div class="field field-full">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required autocomplete="email">
+        </div>
+        <div class="field field-full">
+          <label for="message">What do you need doing?</label>
+          <textarea id="message" name="message" required placeholder="e.g. flat-pack wardrobe assembly, fence repair, lawn and hedges trimmed…"></textarea>
+        </div>
+        <div class="form-actions field-full">
+          <button type="submit" class="btn btn-primary">Send enquiry</button>
+        </div>
+      </form>
     </section>
   </main>
 
