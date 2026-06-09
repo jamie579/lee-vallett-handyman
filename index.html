@@ -104,6 +104,36 @@
     .panel + .panel{border-top:none;border-left:1px solid var(--line);}
   }
 
+  /* Rates */
+  .rates{max-width:62rem;margin:clamp(2.5rem,6vw,4rem) auto 0;padding:0 1.5rem;}
+  .rates-head{
+    font-family:var(--font-display);font-weight:800;
+    font-size:clamp(1.8rem,6vw,2.6rem);color:var(--pine-deep);letter-spacing:-.01em;
+    margin-bottom:1.4rem;
+  }
+  .rate-cards{display:grid;grid-template-columns:1fr;gap:1rem;}
+  .rate-card{
+    background:var(--sand);border:1px solid var(--line);border-radius:4px;
+    padding:clamp(1.4rem,4vw,1.8rem);
+  }
+  .rate-label{
+    font-size:.78rem;text-transform:uppercase;letter-spacing:.16em;
+    font-weight:600;color:var(--ochre);margin-bottom:.6rem;
+  }
+  .rate-figure{
+    font-family:var(--font-display);font-weight:800;
+    font-size:clamp(2rem,7vw,2.6rem);color:var(--pine-deep);line-height:1;
+  }
+  .rate-unit{
+    font-family:var(--font-body);font-weight:600;font-size:1rem;
+    color:var(--muted);margin-left:.25rem;
+  }
+  .rate-note{color:var(--muted);margin-top:.6rem;font-size:.98rem;}
+  .rates-foot{color:var(--muted);margin-top:1.2rem;font-size:.95rem;max-width:44rem;}
+  @media (min-width:560px){
+    .rate-cards{grid-template-columns:1fr 1fr;}
+  }
+
   /* Contact */
   .contact{max-width:62rem;margin:clamp(2.5rem,6vw,4rem) auto 0;padding:0 1.5rem;}
   .contact-head{
@@ -180,7 +210,7 @@
       <p class="eyebrow">Sheffield &amp; surrounding areas</p>
       <h1 class="name">Lee Vallett</h1>
       <p class="trade">Handyman &amp; Gardening</p>
-      <p class="tagline">Reliable help around the home and garden. No job too big or too small.</p>
+      <p class="tagline">I'll give you reliable help around the home and garden. No job too big or too small.</p>
       <div class="actions">
         <a class="btn btn-primary" href="tel:+447946408165">Call Lee</a>
         <a class="btn btn-ghost" href="#enquiry">Send an enquiry</a>
@@ -190,7 +220,7 @@
 
   <main>
     <section class="intro" aria-label="About Lee">
-      <p class="intro-text">A skilled, all-round handyman covering Sheffield and the surrounding areas. From putting up a single shelf to a full garden makeover, Lee turns his hand to most jobs around the home and garden — big or small, indoors and out. If it needs fixing, fitting, building or tidying, just ask.</p>
+      <p class="intro-text">I'm Lee, a skilled, all-round handyman covering Sheffield and the surrounding areas. From putting up a single shelf to a full garden makeover, I'll turn my hand to most jobs around the home and garden, big or small, indoors and out. If it needs fixing, fitting, building or tidying, just ask.</p>
     </section>
 
     <section class="services" aria-label="Services">
@@ -229,9 +259,26 @@
       </article>
     </section>
 
+    <section class="rates" aria-label="Rates">
+      <h2 class="rates-head">Rates</h2>
+      <div class="rate-cards">
+        <div class="rate-card">
+          <p class="rate-label">Smaller jobs</p>
+          <p class="rate-figure">£30<span class="rate-unit">/ hour</span></p>
+          <p class="rate-note">Great for quick repairs and odd jobs around the house. Minimum charge of one hour.</p>
+        </div>
+        <div class="rate-card">
+          <p class="rate-label">Bigger jobs</p>
+          <p class="rate-figure">£250–300<span class="rate-unit">/ day</span></p>
+          <p class="rate-note">A full day on site, 8am to 6pm. £250 for general days, rising to £300 for jobs that need specialist tools or materials.</p>
+        </div>
+      </div>
+      <p class="rates-foot">Every job is different, so these are a guide. I'll always give you a free, fixed quote before I start any work, with no obligation.</p>
+    </section>
+
     <section class="contact" aria-label="Contact">
       <h2 class="contact-head">Get in touch</h2>
-      <p class="contact-sub">Free, no-obligation quotes. Friendly, punctual and tidy.</p>
+      <p class="contact-sub">I give free, no-obligation quotes, and I'll always turn up when I say I will and leave the place tidy.</p>
       <dl class="contact-details">
         <div class="contact-row">
           <dt>Phone</dt>
@@ -250,7 +297,7 @@
 
     <section class="enquiry" id="enquiry" aria-label="Send an enquiry">
       <h2 class="enquiry-head">Send an enquiry</h2>
-      <p class="enquiry-sub">Tell Lee what you need doing and he'll get back to you, usually the same day.</p>
+      <p class="enquiry-sub">Tell me what you need doing and I'll get back to you, usually the same day.</p>
       <form action="https://formsubmit.co/leevalletthandyman@gmail.com" method="POST" class="form-grid">
         <!-- FormSubmit settings -->
         <input type="hidden" name="_subject" value="New website enquiry">
