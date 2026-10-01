@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://leevalletthandyman.co.uk/sitemap.xml
